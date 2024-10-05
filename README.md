@@ -191,7 +191,13 @@ If you wish to contribute to this project, feel free to:
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
----
+screenshot:
+
+![Screenshot 2024-10-05 084726](https://github.com/user-attachments/assets/9af23828-a019-4833-a148-7ef18a7086dd)
+![Screenshot 2024-10-05 084700](https://github.com/user-attachments/assets/f100e647-f65a-4e45-a324-cae1e10794a5)
+![Screenshot 2024-10-05 084645](https://github.com/user-attachments/assets/3a0ddc33-e8d4-475f-92c1-25bf1652c8a3)
+
+
 
 ### Additional Considerations
 1. **Testing**: Implement a testing strategy to ensure that the extension correctly identifies dark patterns and handles edge cases (e.g., unusual page structures).
