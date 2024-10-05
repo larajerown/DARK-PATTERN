@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Pattern Detector</title>
+    
+    <!-- Preload the script for better performance -->
+    <link rel="preload" href="popup.js" as="script">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 300px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #results {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #d9534f; /* Red color for results */
+        }
+        .highlight {
+            background-color: rgb(255, 0, 0); /* Highlight color for dark patterns */
+        }
+    </style>
+</head>
+<body>
+    <h1>Dark Pattern Detector</h1>
+    <button id="checkBtn">Check for Dark Patterns</button>
+    <div id="results"></div>
+    <script src="popup.js"></script> <!-- Link to the external JS file -->
+</body>
+</html>

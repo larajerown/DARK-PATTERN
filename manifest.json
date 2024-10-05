@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Dark Pattern Detector",
+  "version": "1.0",
+  "description": "A Chrome extension that detects dark patterns on websites using web scraping.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js" 
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"], 
+      "js": ["DarkPatternDetector.js"], 
+      "css": ["styles.css"] 
+    }
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["keywords.json"], 
+      "matches": ["<all_urls>"] 
+    }
+  ],
+  "icons": {
+    "48": "icon.png" 
+  }
+}

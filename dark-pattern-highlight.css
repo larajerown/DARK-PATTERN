@@ -1,0 +1,5 @@
+/* In a CSS file or inside a <style> tag in index.html */
+.dark-pattern-highlight {
+    background-color: yellow;
+    font-weight: bold;
+}

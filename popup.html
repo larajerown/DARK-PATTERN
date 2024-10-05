@@ -1,0 +1,28 @@
+// popup.js
+
+// Get references to the button and results div
+const checkBtn = document.getElementById('checkBtn');
+const resultsDiv = document.getElementById('results');
+
+// Add click event listener to the button
+checkBtn.addEventListener('click', () => {
+    // Send a message to the active tab to start checking for dark patterns
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, { action: 'CHECK_DARK_PATTERNS' });
+    });
+});
+
+// Listen for messages from the content script
+chrome.runtime.onMessage.addListener((message) => {
+    if (message.type === "DARK_PATTERNS_DETECTED") {
+        // Display the detected patterns in the results div
+        resultsDiv.innerHTML = ''; // Clear previous results
+        if (message.patterns.length > 0) {
+            resultsDiv.innerHTML = `<strong>Detected Dark Patterns:</strong><br>
+                                    ${message.patterns.join('<br>')}
+                                    <br><strong>Total Patterns Found: ${message.count}</strong>`;
+        } else {
+            resultsDiv.innerHTML = 'No dark patterns detected.';
+        }
+    }
+});
